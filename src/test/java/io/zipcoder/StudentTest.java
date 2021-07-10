@@ -32,7 +32,6 @@ public class StudentTest {
                 Student student = new Student(firstName, lastName, examScores);
 
                 // When
-                String expectedExamScore =
 
 
                 // Then
@@ -40,4 +39,3 @@ public class StudentTest {
 
                 }
         }
-}

@@ -25,9 +25,13 @@ public class Student {
 
     }
 
+    public String getFullName() {
+        return this.lastName + ", " + this.firstName;
+    }
+
 
     public int getNumberOfExamsTaken() {
-        return this.testScores.length;
+        return this.examScores.size();
     }
 
 
@@ -35,9 +39,9 @@ public class Student {
         StringBuilder stringOfScores = new StringBuilder();
 
 
-        for (int i = 0; i < testScores.length; i++) {
-            stringOfScores.append(testScores[i] + " | ");
-            stringOfScores = stringOfScores.append(i);
+        for (int i = 0; i < examScores.size(); i++) {
+            stringOfScores.append(examScores.get(i)).append(" | ");
+            stringOfScores.append(i);
         }
 
         return Arrays.toString(testScores);
@@ -72,21 +76,18 @@ public class Student {
         // ArrayList<Double> newAverage = new ArrayList<>(getAverageExamScore());
         // Collections.addAll(newAverage);
         Double result = 0.00;
-        for (int i = 0; i < testScores.length; i++) {
-            result += testScores[i];
+        for (int i = 0; i < examScores.size(); i++) {
+            result += examScores.size();
         }
 
-        return result / testScores.length;
+        return result / examScores.size();
     }
-
-
-    }
-
 
     @Override
-
     public String toString() {
-        return String.format("Hello World %s", getAverageExamScore());
+        return String.format("Student Name: %s %s\n" + "Average Score: %s\n"
+                            + "Exam Scores; %s", firstName, lastName,
+                            getAverageExamScore(), getAverageExamScore());
     }
 }
 // I want it to look pretty..
